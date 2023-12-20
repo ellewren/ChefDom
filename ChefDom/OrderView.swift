@@ -28,7 +28,6 @@ struct OrderView: View {
 
                     Button {
                         print("Order Placed")
-                        // Add logic to handle placing the order
                     } label: {
                         PurchaseButton(title: "Place Order")
                     }
@@ -47,6 +46,6 @@ struct OrderView: View {
 }
 
 
-//#Preview {
-//    OrderView()
-//}
+#Preview {
+    OrderView().environmentObject(Order())
+}

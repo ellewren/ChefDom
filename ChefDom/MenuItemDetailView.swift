@@ -41,6 +41,7 @@ struct MenuItemDetailView: View {
             
             Button {
                 order.items.append(menuItems)
+                showingDishDetail = false
             } label: {
                 PurchaseButton(title: "$\(menuItems.price, specifier: "%.2f") - Add to Order")
             }

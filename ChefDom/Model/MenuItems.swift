@@ -16,7 +16,9 @@ struct MenuItem: Identifiable {
     var price: Double
 }
 
-struct Menu {
+struct Menu: Identifiable {
+    var id: ObjectIdentifier
+    
     
     static let seafoodBoil  = MenuItem(id: 1, dish: "Seafood Boil",
                                     description: "Immerse yourself in a medley of ocean treasures, featuring succulent shrimp, plump crab legs, tender mussels, and sweet corn, all generously seasoned with a blend of aromatic spices. ",

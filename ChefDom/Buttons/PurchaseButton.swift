@@ -12,12 +12,7 @@ struct PurchaseButton: View {
     var title: LocalizedStringKey
     
     var body: some View {
-        Button {
-            print("tapped")
-        } label: {
-            Text(title)
-                .fontWeight(.semibold)
-        }
+        Text(title)
         .frame(width: 200, height: 50)
         .background(Color("brandColor"))
         .tint(.white)

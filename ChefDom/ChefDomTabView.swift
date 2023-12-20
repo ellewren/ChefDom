@@ -32,6 +32,6 @@ struct ChefDomTabView: View {
 }
 
 #Preview {
-    ChefDomTabView()
+    ChefDomTabView().environmentObject(Order())
 }
 
