@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct PurchaseButton: View {
+    
+    var title: LocalizedStringKey
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            print("tapped")
+        } label: {
+            Text(title)
+                .fontWeight(.semibold)
+        }
+        .frame(width: 200, height: 50)
+        .background(Color("brandColor"))
+        .tint(.white)
+        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 8, height: 8)))
+        .padding(.bottom, 30)
     }
 }
 
 #Preview {
-    PurchaseButton()
+    PurchaseButton(title: "Test Button")
 }

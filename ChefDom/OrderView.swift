@@ -8,11 +8,45 @@
 import SwiftUI
 
 struct OrderView: View {
+    
+    @EnvironmentObject var order: Order
+    
     var body: some View {
-        Text("Order View")
+        
+        NavigationView {
+            ZStack {
+                VStack {
+                    List {
+                        ForEach(order.items) { menuItem in
+                            MenuListCell(menuItem: menuItem)
+                        }
+                        .onDelete(perform: { indexSet in
+                            order.items.remove(atOffsets: indexSet)
+                        })
+                    }
+                    .listStyle(PlainListStyle())
+
+                    Button {
+                        print("Order Placed")
+                        // Add logic to handle placing the order
+                    } label: {
+                        PurchaseButton(title: "Place Order")
+                    }
+                }
+                .navigationTitle("Order")
+                .navigationBarItems(leading: Image("Logo")
+                                        .resizable()
+                                        .frame(width: 50, height: 50))
+            }
+            
+            if order.items.isEmpty {
+                EmptyState(imageName: "bag", message: "Order some shit mf")
+            }
+        }
     }
 }
 
-#Preview {
-    OrderView()
-}
+
+//#Preview {
+//    OrderView()
+//}

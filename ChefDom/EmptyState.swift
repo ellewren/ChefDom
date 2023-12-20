@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct EmptyState: View {
+    
+    let imageName: String
+    let message: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            Color(.systemBackground)
+                .ignoresSafeArea()
+            
+            
+            VStack{
+                 Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 200)
+                
+                Text(message)
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+                    .padding()
+            }
+        }
     }
 }
 
 #Preview {
-    EmptyState()
+    EmptyState(imageName: "bag", message: "Order some shit")
 }

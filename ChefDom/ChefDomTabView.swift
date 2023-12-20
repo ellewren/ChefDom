@@ -9,16 +9,29 @@ import SwiftUI
 
 struct ChefDomTabView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        
+        TabView {
+            MenuListView()
+                .tabItem {
+                    Label("Menu", systemImage: "menucard")
+                }
+             CustomerView()
+                .tabItem {
+                    Label("Account", systemImage: "person")
+                }
+             OrderView()
+                .tabItem {
+                    Label("Order", systemImage: "doc.text.image")
+                }
+                .padding()
         }
-        .padding()
+        .tint(Color("brandColor"))
+   
     }
 }
 
 #Preview {
     ChefDomTabView()
 }
+

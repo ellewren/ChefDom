@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct ChefDomApp: App {
+    
+    var order = Order()
+    
     var body: some Scene {
+        
         WindowGroup {
-            ChefDomTabView()
+            ChefDomTabView().environmentObject(order)
         }
     }
 }
