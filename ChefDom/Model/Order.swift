@@ -11,4 +11,8 @@ final class Order: ObservableObject {
     
     @Published var items: [MenuItem] = []
     
+    var totalPrice: Double {
+        items.reduce(0) { $0 + $1.price}
+    }
+    
 }
